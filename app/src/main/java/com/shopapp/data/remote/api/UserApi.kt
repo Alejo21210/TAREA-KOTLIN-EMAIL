@@ -42,4 +42,11 @@ interface UserApi {
     @Multipart
     @POST("users/upload-avatar/")
     suspend fun uploadAvatar(@Part part: MultipartBody.Part): Response<UserDto>
+
+    // ── Notificaciones de staff ───────────────────────────────────────────────
+
+    @POST("emails/send/")
+    suspend fun sendNotification(
+        @Body body: SendNotificationDto,
+    ): Response<NotificationResultDto>
 }
