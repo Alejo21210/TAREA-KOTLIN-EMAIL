@@ -229,6 +229,7 @@ fun NavGraph(
                             }
                         },
                         onSendNotification = { navController.navigate(Screen.SendNotification.route) },
+                        isStaff            = isStaff,
                     )
                 }
             }
