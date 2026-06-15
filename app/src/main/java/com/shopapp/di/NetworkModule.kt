@@ -35,9 +35,9 @@ object NetworkModule {
         .authenticator(authInterceptor)                          // renueva el token en 401
         .addInterceptor(BearerTokenInterceptor(tokenDataStore))  // añade Bearer a cada request
         .addInterceptor(logging)
-        .connectTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(30, TimeUnit.SECONDS)
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .readTimeout(60, TimeUnit.SECONDS)
+        .writeTimeout(60, TimeUnit.SECONDS)
         .build()
 
     @Provides @Singleton
