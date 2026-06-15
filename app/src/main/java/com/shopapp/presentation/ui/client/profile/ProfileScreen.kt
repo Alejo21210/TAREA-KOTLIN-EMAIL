@@ -25,6 +25,7 @@ fun ProfileScreen(
     onEditProfile:      () -> Unit = {},
     onLogout:           () -> Unit = {},
     onSendNotification: () -> Unit = {},
+    isStaff:            Boolean = false,
     viewModel:          ProfileViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsState()
@@ -97,7 +98,7 @@ fun ProfileScreen(
 
                     Spacer(Modifier.height(4.dp))
 
-                    if (profile?.isStaff == true) {
+                    if (isStaff) {
                         SuggestionChip(onClick = {}, label = { Text("Staff") })
                     }
 
@@ -114,7 +115,7 @@ fun ProfileScreen(
                         Text("Editar perfil")
                     }
 
-                    if (profile?.isStaff == true) {
+                    if (isStaff) {
                         HorizontalDivider()
                         Spacer(Modifier.height(8.dp))
 

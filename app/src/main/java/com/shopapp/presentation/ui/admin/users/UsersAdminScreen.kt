@@ -257,6 +257,12 @@ private fun UserAdminCard(
                     horizontalArrangement = Arrangement.spacedBy(6.dp),
                 ) {
                     Text(
+                        text       = "#${user.id} ",
+                        style      = MaterialTheme.typography.bodySmall,
+                        color      = TextSecondary,
+                        fontWeight = FontWeight.Medium,
+                    )
+                    Text(
                         text       = user.username,
                         style      = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.SemiBold,
